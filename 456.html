@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+	
+	
+	
+	
+	<script type="text/babel">
+	  var   Top = React.createClass({
+	       add:function(){
+		      // alert(123)
+			   var a = this.refs.myInput
+			   
+			   //alert(a.value)
+			   var arr2 = this.state.arr;
+			   arr2.push(a.value);
+			   this.setState({"arr":arr2})
+			   
+		   },
+		   getInitialState:function(){
+		        return {
+				    arr:['aa']
+				    
+				}
+		   },
+	       render:function(){
+		     return  <div> 
+					<h3>11111111</h3>
+					<input type="text" ref="myInput" /> 
+					<input type="button" onClick={ this.add } value="add" />
+                    <ul>
+                    	
+						<li>0000</li>
+						{ this.state.arr.map(function(k,v){
+						   
+						     return <li> { k } </li>
+						  
+						})}
+						
+						
+						
+                    </ul>
+					<p> { 1+1 } </p>
+					    
+				
+			  </div>
+		 
+		   
+		   }
+	  
+	  })
+	   var  List = React.createClass({
+	   
+	   
+	        render:function(){
+			
+			   return  <ul>
+			    	<li>aaa</li>
+			    	<li>bbb</li>
+			    	<li>cccc</li>
+			    </ul>
+			
+			}
+	   })
+	
+	
+       ReactDOM.render(
+	   <div> 
+	       <Top />
+	       <List />
+	   </div>,document.getElementById("example")
+	   
+	   )
+
+	</script>
+  </body>
+</html>

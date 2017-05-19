@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+	<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+	<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+	
+    <div id="wrap"> 
+	
+	
+	</div> 
+	 
+	 
+	 
+	 
+	 
+	<script type="text/babel">
+      
+	  // 组件名   首字母大写  不要和html标签冲突  
+    var  Aaa = React.createClass({
+	
+	  
+	  
+	     render:function(){
+		 
+		    return   <div> 
+			
+			 
+			             <p>  {  this.props.tit } </p>
+			
+			        </div>
+		   
+		 
+		 }
+	
+	})	  
+
+
+
+	  
+var  Hello	=	React.createClass({
+
+			 render:function(){
+				return   <div> 
+							   <h3>  { this.props.name   } </h3>
+							   <ul>
+									{ 
+									
+										this.props.lists.map(function(k,v){
+										
+										
+											return  <li> { k } </li>
+										
+										
+										})      
+									}
+							   </ul>
+							   
+							   <Aaa tit = { this.props.txt } />
+						 </div> 
+			 }
+		})
+		
+		
+		
+		
+		
+		
+	     var  arr1 = ["hello","react","aaaaa"];
+		 
+		var  arr2 = ["vue111","angualr123123","react"];
+	    ReactDOM.render(
+		 
+			<div>    
+				<h3> 
+					hello react
+					<p>aaaaaaaaaaaaaaa</p>
+				</h3>
+				   <p id="aa">222222222222222</p>
+				   
+				     <Hello  name="abc 123"  lists = {arr1}  txt =" 这是一个新的属性值 "   />  
+					
+					 <Hello  name="hello组件第二次调用"  lists = {arr2} txt =" 这是一个新的属性值2 "    />  
+				   
+				   
+			</div>
+			 
+			,document.getElementById("wrap")  )
+	
+	
+	</script>
+	
+	
+	
+</body>
+</html>
